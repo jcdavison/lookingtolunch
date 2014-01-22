@@ -15,6 +15,7 @@ Lookingtolunch::Application.configure do
   # Configure static asset server for tests with Cache-Control for performance.
   config.serve_static_assets  = true
   config.static_cache_control = "public, max-age=3600"
+  I18n.enforce_available_locales = false
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
