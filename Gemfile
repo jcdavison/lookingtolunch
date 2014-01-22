@@ -29,6 +29,9 @@ gem 'uuidtools'
 #misc tools
 gem 'twitter'
 
+#heroku
+gem 'rails_12factor'
+
 group :development, :test do
   gem 'capybara-webkit', github: 'thoughtbot/capybara-webkit', branch: 'master'
   gem 'rspec-rails', '~> 2.14.1'
