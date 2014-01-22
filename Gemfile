@@ -1,37 +1,61 @@
 source 'https://rubygems.org'
-ruby "2.1.0"
+ruby '2.1.0'
 
 gem 'rails', '4.0.1'
+gem 'haml-rails'
+gem 'pg', '~> 0.17.1'
+gem 'thin', '~> 1.6.1'
+
+#assets
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'foundation-rails'
+gem 'font-awesome-rails'
+
+#javascript
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
-gem "haml", "~> 4.0.4"
-gem "angularjs-rails", "~> 1.2.7"
-gem "zeus", "~> 0.13.3"
-gem "pg", "~> 0.17.1"
-gem "devise", '3.0.0'
-gem "omniauth"
-gem "omniauth-twitter"
-gem "uuidtools"
-gem "quiet_assets", "~> 1.0.2"
-gem "thin", "~> 1.6.1"
-gem "jader", "~> 0.0.8"
-gem "ngmin-rails", "~> 0.4.0"
-gem 'foundation-rails'
-gem "font-awesome-rails"
-gem "twitter"
+gem 'angularjs-rails', '~> 1.2.7'
+gem 'ngmin-rails', '~> 0.4.0'
+
+#user auth
+gem 'devise', '3.0.0'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'uuidtools'
+
+
+#misc tools
+gem 'twitter'
 
 group :development, :test do
-  gem "rspec-rails", "~> 2.14.1"
+  gem 'capybara-webkit', github: 'thoughtbot/capybara-webkit', branch: 'master'
+  gem 'rspec-rails', '~> 2.14.1'
   gem 'factory_girl_rails', '4.2.1'
-  gem "mocha", "~> 1.0.0"
-  gem "database_cleaner", "~> 1.2.0"
+  gem 'mocha', '~> 1.0.0'
   gem 'pry'
   gem 'pry-debugger'
+  gem 'quiet_assets'
+  gem 'parallel_tests'
+  gem 'zeus-parallel_tests'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
 end
 
-group :doc do
-  gem 'sdoc', require: false
+group :development do 
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'better_errors'
+  gem 'terminal-notifier-guard'
+end
+
+group :test do
+  gem 'launchy', '>= 2.1.2'
+  gem 'capybara', '>= 1.1.3'
+  gem 'database_cleaner', '~> 1.2.0'
+  gem 'zeus', :require => false
+  gem 'shoulda-matchers'
+  gem 'pdf-inspector'
+  gem 'selenium-webdriver'
 end
