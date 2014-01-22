@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe LunchersController do
+
   context "authenticated user" do
     before do
       @user = create :user
       sign_in @user
     end
-
     context "GET '/'" do
       it "renders index view for non-logged in users" do
         get :main
