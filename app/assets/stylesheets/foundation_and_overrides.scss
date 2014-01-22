@@ -1,6 +1,7 @@
 // 
 // FOUNDATION SETTINGS
 //
+@import "variables";
 
 // Uncomment to use rem-calc() in your settings
 // @import "foundation/functions";
@@ -50,7 +51,7 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: $aqua;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;

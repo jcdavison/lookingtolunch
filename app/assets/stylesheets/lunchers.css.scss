@@ -1,3 +1,42 @@
-// Place all the styles related to the lunchers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+@import "foundation/components/buttons";
+
+.centered {
+  text-align: center;
+}
+
+.luncherpic {
+  padding: 2px;
+  height: 200px;
+  width: 200px;
+}
+
+.handle {
+  font-size: 18px;
+}
+
+.aqua {
+  color: $aqua;
+}
+
+.green {
+  color: $green;
+}
+
+.red {
+  color: $red;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.letslunch {
+  @include button(rem-calc(12), $green, true);
+  font-size: 18px;
+}
+
+.nothanks {
+  @include button(rem-calc(12), $red, true);
+  font-size: 18px;
+}
