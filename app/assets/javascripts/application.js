@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
+//= require angular-mocks
 //= require angular-route
 //= require_tree ./app
-
-$(function(){ $(document).foundation(); });
