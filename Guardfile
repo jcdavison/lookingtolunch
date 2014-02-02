@@ -31,4 +31,3 @@ guard :rspec , :cli  => '--format progress', zeus: true, parrallel: false, bundl
   watch(%r{^spec/acceptance/(.+)\.feature$})
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
-
