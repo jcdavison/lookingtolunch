@@ -4,6 +4,8 @@ ruby '2.1.0'
 gem 'rails', '4.0.1'
 gem 'haml-rails'
 gem 'pg', '~> 0.17.1'
+gem 'redis'
+gem 'redis-namespace'
 gem 'thin', '~> 1.6.1'
 
 #assets

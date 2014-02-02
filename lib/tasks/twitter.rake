@@ -10,7 +10,6 @@ namespace :twitter do
     @lat = 37.788245
     @long = -122.417408
     @tweets = @client.search("", :geocode=> "#{@lat},#{@long},5km" , :result_type=> "recent")
-    binding.pry
     @tweets.each do |tweet|
       LunchMate.create name: tweet.user.name, handle: tweet.user.screen_name, 
         info: tweet.user.description, last_tweet: tweet.text, pic: tweet.user.profile_image_url.to_s 

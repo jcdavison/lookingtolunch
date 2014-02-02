@@ -4,6 +4,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     auth_hash = request.env["omniauth.auth"]
     uid = auth_hash["uid"]
     name = auth_hash["info"]["name"]
+    handle = auth_hash["info"]["nickname"]
     auth = Authorization.find_by_provider_and_uid("twitter", uid)
 
     if auth
@@ -13,7 +14,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       unless current_user
         unless user = User.find_by_name(name)
           user = User.create name: name, password: Devise.friendly_token[0,8], 
-            email: "#{UUIDTools::UUID.random_create}@lookingtolunch.com"
+            email: "#{UUIDTools::UUID.random_create}@lookingtolunch.com", twitter: handle
         end
       else
         user = current_user
@@ -25,7 +26,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
       auth.update_attributes uid: uid, token: auth_hash['credentials']['token'],
         secret: auth_hash["credentials"]['secret'], name: name, url: "https://twitter.com/#{name}"
-      # binding.pry
     end
 
     if user 
