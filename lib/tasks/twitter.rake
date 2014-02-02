@@ -14,7 +14,6 @@ namespace :twitter do
     @tweets.each do |tweet|
       LunchMate.create name: tweet.user.name, handle: tweet.user.screen_name, 
         info: tweet.user.description, last_tweet: tweet.text, pic: tweet.user.profile_image_url.to_s 
-      # LunchMate.create name:
     end
   end
 end
