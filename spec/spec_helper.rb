@@ -14,6 +14,8 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 RSpec.configure do |config|
   config.include Devise::TestHelpers, :type => :controller
   config.include FactoryGirl::Syntax::Methods
+  config.include Requests::JsonHelpers, type: :request
+  config.include Requests::UsersHelpers, type: :request
 
   # ## Mock Framework
   #

@@ -7,6 +7,7 @@ gem 'pg', '~> 0.17.1'
 gem 'redis'
 gem 'redis-namespace'
 gem 'thin', '~> 1.6.1'
+gem 'rabl'
 
 #assets
 gem 'sass-rails', '~> 4.0.0'

@@ -22,11 +22,6 @@ describe User do
       5.times {|n| create :lunch_mate, handle: "honeybadger#{n}"}
     end
 
-    context "#create_lunch_pool" do
-      it {User.any_instance.expects(:create_lunch_pool).once}
-      let(:user) {create :user}
-    end
-
     context "#lunch_pool" do
       let(:user) {create :user}
       it { expect(user.lunch_pool.length).to eq 5 }
