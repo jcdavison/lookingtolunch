@@ -18,7 +18,6 @@ describe User do
 
   context "instance methods" do
     before do
-      $redis.flushdb
       5.times {|n| create :lunch_mate, handle: "honeybadger#{n}"}
     end
 

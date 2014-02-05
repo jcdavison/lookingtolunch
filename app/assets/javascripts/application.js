@@ -15,4 +15,5 @@
 //= require angular
 //= require angular-mocks
 //= require angular-route
+//= require underscore
 //= require_tree ./app

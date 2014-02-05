@@ -32,7 +32,9 @@
 
 #### TODO
 
+- test the routes ? 
 -  create specs around controller
+
 -  create a service that binds data from server to user scope for lunchmates
 -  create a scope method that cycles through and selects yes or now for lunchers
 -  create a service that sends approriate data to server to select a lunch and send tweet

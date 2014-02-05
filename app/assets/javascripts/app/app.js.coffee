@@ -1,5 +1,7 @@
-Lunch = angular.module('Lunch', ['ngRoute','Lunch.controllers', 'Lunch.services'])
+# the angular getter method that allows for later referencing of the angular object
+app = angular.module('Lunch', ['ngRoute','Lunch.controllers', 'Lunch.services'])
 
-Lunch.config([ '$routeProvider', ($routeProvider) ->
-  $routeProvider.when("/", { templateUrl: "/ngviews/lunch.html", controller: "LunchCtrl" } )
+app.config([ '$routeProvider', ($routeProvider) ->
+  $routeProvider.when("/", { templateUrl: "/ngviews/lunch.html", controller: "LunchPoolController" } )
 ])
+

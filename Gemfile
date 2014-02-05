@@ -8,6 +8,7 @@ gem 'redis'
 gem 'redis-namespace'
 gem 'thin', '~> 1.6.1'
 gem 'rabl'
+gem 'underscore-rails'
 
 #assets
 gem 'sass-rails', '~> 4.0.0'
@@ -64,4 +65,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'pdf-inspector'
   gem 'selenium-webdriver'
+  gem "mock_redis", "~> 0.11.0"
 end

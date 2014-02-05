@@ -5,24 +5,26 @@
     </h4>
   </div>
 </div>
-<div class="row">
-  <div class="large-6 columns large-centered centered">
-    <img ng-src="{{lunchers[0].img}}" class="luncherpic">
+<div ng-controller="LunchPoolController">
+  <div class="row">
+    <div class="large-6 columns large-centered centered">
+      <img ng-src="{{lunchers[0].pic}}" class="luncherpic">
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="large-6 columns large-centered centered">
-    <span class="handle subheader">{{lunchers[0].handle}}</span>
+  <div class="row">
+    <div class="large-6 columns large-centered centered">
+      <span class="handle subheader">{{lunchers[0].handle}}</span>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="large-6 columns large-centered centered">
-    <span class="handle subheader">{{lunchers[0].info}}</span>
+  <div class="row">
+    <div class="large-6 columns large-centered centered">
+      <span class="handle subheader">{{lunchers[0].info}}</span>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="large-6 small-12 large-centered small-centered columns centered">
-    <a ng-click="letslunch" class="letslunch bold">Lunch!</a>
-    <a ng-click="nope" class="nothanks bold">Nope.</a>
+  <div class="row">
+    <div class="large-6 small-12 large-centered small-centered columns centered">
+      <a ng-click="letslunch" class="letslunch bold" id="nope">Lunch!</a>
+      <a ng-click="nope" class="nothanks bold" id="yep">Nope.</a>
+    </div>
   </div>
 </div>

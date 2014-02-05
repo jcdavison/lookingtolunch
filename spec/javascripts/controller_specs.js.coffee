@@ -4,8 +4,8 @@ describe "Lunch controller", ->
   describe "LunchCtrl", ->
     it "should set images to a populated array", inject(($controller) ->
       scope = {}
-      ctrl = $controller("LunchCtrl",
+      ctrl = $controller("LunchPoolController",
         $scope: scope
       )
-      expect(scope.lunchers.length).toBe 4
+      expect(scope.lunchers.length).toBe 1
     )
