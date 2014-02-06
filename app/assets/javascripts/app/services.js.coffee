@@ -8,4 +8,7 @@ services.factory 'LunchMates', ($rootScope, $q, $http) ->
           d.resolve(response.data)
         return d.promise
 
+      testFunction: () ->
+        "test"
+
     return LunchMates

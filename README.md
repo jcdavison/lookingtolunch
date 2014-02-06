@@ -17,7 +17,7 @@
 #### make sure to run user:create task to get the right user created locally for the js tests.
 
 ### Running the test suite
-#### This app does not mock any redis data that the app intends to own.
+
 
 ```
   zeus start
@@ -32,10 +32,14 @@
 
 #### TODO
 
-- test the routes ? 
--  create specs around controller
+SPECS
+  -  Lunch Services spec is not working, waiting for feedback on stackoverflow questions.
 
--  create a service that binds data from server to user scope for lunchmates
--  create a scope method that cycles through and selects yes or now for lunchers
--  create a service that sends approriate data to server to select a lunch and send tweet
--  create a service that builds a chat room for each user that invited lunchers enter
+BACKEND
+  -  ensure that if the redis instance returns nil, the app doesn't crash
+  -  is redis-mock actually working and not effecting production ? 
+  -  create specs around controller
+FRONT END
+  -  create a scope method that cycles through and selects yes or now for lunchers
+  -  create a service that sends approriate data to server to select a lunch and send tweet
+  -  create a service that builds a chat room for each user that invited lunchers enter

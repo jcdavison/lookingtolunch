@@ -1,6 +1,7 @@
 module.exports = function (config) {
   config.set({
-    basePath: '../..',
+    reporters: ['progress'],
+    basePath: './',
     frameworks: ['jasmine'],
     autoWatch: true,
     autoWatchBatchDelay: 1000,
@@ -10,18 +11,14 @@ module.exports = function (config) {
     browswers: ['Chrome'],
     files: [
       'http://localhost:3000/assets/application.js',
-      // 'spec/javascripts/lunch_controller_spec.js.coffee',
       'spec/javascripts/*.{js,coffee}',
       {
         pattern: 'app/assets/javascripts/*.{js,coffee}',
         watched: true,
         included: true,
-        served: false
+        served: true
       }
     ],
-    // urlRoot: '/__karma/',
-    proxies: {
-    '/': 'http://localhost:3000'
-    }
+    urlRoot: '/',
   });
 };
