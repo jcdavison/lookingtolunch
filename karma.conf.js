@@ -11,7 +11,7 @@ module.exports = function (config) {
     browswers: ['Chrome'],
     files: [
       'http://localhost:3000/assets/application.js',
-      'spec/javascripts/*.{js,coffee}',
+      'spec/javascripts/unit/*.{js,coffee}',
       {
         pattern: 'app/assets/javascripts/*.{js,coffee}',
         watched: true,

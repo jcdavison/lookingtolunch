@@ -1,4 +1,5 @@
-services  = angular.module('Lunch.services', [] )
+services = angular.module('Lunch.services', [] )
+# the above is the setter
 services.factory 'LunchMates', ($rootScope, $q, $http) ->
     LunchMates = 
 
@@ -7,8 +8,5 @@ services.factory 'LunchMates', ($rootScope, $q, $http) ->
         $http.get('/lunchers').then (response, status) ->
           d.resolve(response.data)
         return d.promise
-
-      testFunction: () ->
-        "test"
 
     return LunchMates
