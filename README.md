@@ -1,7 +1,5 @@
 ### http://lookingtolunch.herokuapp.com/
 
-
-
 ### Config Steps
 
 ```
@@ -16,29 +14,33 @@
 
 #### make sure to run user:create task to get the right user created locally for the js tests.
 
-### Running the test suite
+#### Running the test suite
 
 
 ```
-  zeus start
-  bundle exec guard
-  zeus server
-  /usr/local/lib/node_modules/protractor/bin/webdriver-manager start
-  karma start spec/javascripts/lunch.conf.js
   redis-server
+  bundle exec zeus start
+  bundle exec guard
+  bundle exec zeus server
+  /usr/local/lib/node_modules/protractor/bin/webdriver-manager start
+  karma start karma.conf.js
+  protractor protractorConf.js
 ```
 
+#### USEFUL BACKGROUND ON HOW TO SETUP KARMA/RAILS
+http://sebastien.saunier.me/blog/2014/02/04/angular--rails-with-no-fuss.html
 
 
 #### TODO
 
 SPECS
-  -  Lunch Services spec is not working, waiting for feedback on stackoverflow questions.
+
 
 BACKEND
   -  ensure that if the redis instance returns nil, the app doesn't crash
   -  is redis-mock actually working and not effecting production ? 
   -  create specs around controller
+
 FRONT END
   -  create a scope method that cycles through and selects yes or now for lunchers
   -  create a service that sends approriate data to server to select a lunch and send tweet
