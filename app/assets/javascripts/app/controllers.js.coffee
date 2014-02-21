@@ -3,9 +3,15 @@
 # they are the source of truth for the application state
 # scopes are hierarchical and nestable
 # it is bad practice to allow dom interaction or data manipuluation in a controller
+
 controllers = angular.module('Lunch.controllers', [] )
+
 controllers.controller('LunchPoolController', ($scope, LunchMates) ->
     # $scope.lunchers = ["some data"]
     LunchMates.getLunchMates().then (data) ->
       $scope.lunchers = data 
+      $scope.perspectiveLunchMate = $scope.lunchers[0]
+
+    $scope.selectLunchMate = (lunchMate) ->
+      LunchMates.selectLunchMate(lunchMate)
   )

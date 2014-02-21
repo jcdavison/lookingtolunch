@@ -8,5 +8,13 @@ services.factory 'LunchMates', ($rootScope, $q, $http) ->
         $http.get('/lunchers').then (response, status) ->
           d.resolve(response.data)
         return d.promise
+      
+      selectLunchMate: (lunchMate) ->
+        data = 
+          from: lunchMate.id
+        $http
+          method: "post"
+          data: data 
+          url: '/lunch_request'
 
     return LunchMates

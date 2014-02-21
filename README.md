@@ -45,3 +45,7 @@ FRONT END
   -  create a scope method that cycles through and selects yes or now for lunchers
   -  create a service that sends approriate data to server to select a lunch and send tweet
   -  create a service that builds a chat room for each user that invited lunchers enter
+
+TECHNICAL DEBT
+  - scope.selectLunchMate
+  - LunchMates.selectLunchMate 
