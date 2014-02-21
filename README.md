@@ -49,5 +49,5 @@ FRONT END
 
 TECHNICAL DEBT
   NG-App
-    - $scope.selectLunchMate
-    - LunchMates.selectLunchMate 
+  - $scope.selectLunchMate
+  - LunchMates.selectLunchMate 
