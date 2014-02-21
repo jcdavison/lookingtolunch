@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Api::V1::LunchRequestController do
+
   context "unauthenticated user" do
     context "POST '/api/v1/lunch_request.json'" do
       it "responds 401" do
