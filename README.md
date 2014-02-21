@@ -37,15 +37,17 @@ SPECS
 
 
 BACKEND
-  -  ensure that if the redis instance returns nil, the app doesn't crash
-  -  is redis-mock actually working and not effecting production ? 
-  -  create specs around controller
+  - once a LunchRequest is created, trigger a tweet that notifies the LunchRequest.to
+  - when a user signs up, run a server call to firebase that creates a new room for said user
+  - ensure that if the redis instance returns nil, the app doesn't crash
+  - is redis-mock actually working and not effecting production ? 
 
 FRONT END
-  -  create a scope method that cycles through and selects yes or now for lunchers
-  -  create a service that sends approriate data to server to select a lunch and send tweet
-  -  create a service that builds a chat room for each user that invited lunchers enter
+  - create a scope method that cycles through and selects yes or now for lunchers
+  - create a service that sends approriate data to server to select a lunch and send tweet
+  - create a service that builds a chat room for each user that invited lunchers enter
 
 TECHNICAL DEBT
-  - scope.selectLunchMate
-  - LunchMates.selectLunchMate 
+  NG-App
+    - $scope.selectLunchMate
+    - LunchMates.selectLunchMate 
