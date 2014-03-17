@@ -24,6 +24,7 @@ describe Api::V1::LunchRequestController do
           params = { lunch_request: {from: 1}}
           post "/api/v1/lunch_request.json", params
           response.status.should == 200
+          JSON.parse(response.body)["info"].should == "lets lunch"
         end
       end
 
