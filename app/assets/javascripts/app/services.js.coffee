@@ -18,4 +18,5 @@ services.factory 'LunchMates', ($rootScope, $q, $http) ->
           data: data 
           url: '/api/v1/lunch_request'
 
+
     return LunchMates

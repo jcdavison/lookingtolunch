@@ -7,11 +7,20 @@
 controllers = angular.module('Lunch.controllers', [] )
 
 controllers.controller('LunchPoolController', ($scope, LunchMates) ->
-    # $scope.lunchers = ["some data"]
+    n = 0
+
     LunchMates.getLunchMates().then (data) ->
       $scope.lunchers = data 
-      $scope.perspectiveLunchMate = $scope.lunchers[0]
+      setLunchMate()
 
     $scope.selectLunchMate = (lunchMate) ->
       LunchMates.selectLunchMate(lunchMate)
+      incrementLunchMate()
+      setLunchMate()
+
+    incrementLunchMate = () ->
+      n += 1 unless n is $scope.lunchers.count - 1
+
+    setLunchMate = () ->
+      $scope.perspectiveLunchMate = $scope.lunchers[n]
   )
