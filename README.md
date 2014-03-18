@@ -35,6 +35,9 @@ http://sebastien.saunier.me/blog/2014/02/04/angular--rails-with-no-fuss.html
 
 SPECS
 
+FEATURE
+
+  - in order to send a tweet, I need to know the originator's handle and recipients handle, i also want to track the ids of from and to
 
 BACKEND
   - once a LunchRequest is created, trigger a tweet that notifies the LunchRequest.to
@@ -51,3 +54,7 @@ TECHNICAL DEBT
   NG-App
   - $scope.selectLunchMate
   - LunchMates.selectLunchMate 
+
+NOTES
+
+  - it is probably a bad ideas for any given twitter user to repeat requests to lunch from different users

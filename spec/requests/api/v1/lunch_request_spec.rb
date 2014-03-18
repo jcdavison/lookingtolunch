@@ -20,10 +20,9 @@ describe Api::V1::LunchRequestController do
 
     context "POST '/api/v1/lunch_request.json'" do
       context "correctly formed params" do
-        it "response.status == 200" do
-          params = { lunch_request: {from: 1}}
+        it "response.body['info'] == 'letslunch'" do
+          params = {to: 1, toHandle: "someperson"}
           post "/api/v1/lunch_request.json", params
-          response.status.should == 200
           JSON.parse(response.body)["info"].should == "lets lunch"
         end
       end

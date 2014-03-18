@@ -9,10 +9,10 @@ class Search
 
   def initialize term = nil
     @client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV['LUNCH_TWITTER_KEY']
-      config.consumer_secret     = ENV["LUNCH_TWITTER_SECRET"]
-      config.access_token        = ENV["LUNCH_TWITTER_USER_TOKEN"]
-      config.access_token_secret = ENV["LUNCH_TWITTER_USER_SECRET"]
+      config.consumer_key        = ENV['LUNCH_TWEETS_KEY']
+      config.consumer_secret     = ENV["LUNCH_TWEETS_SECRET"]
+      config.access_token        = ENV["LUNCH_TWEETS_ACCESS_TOKEN"]
+      config.access_token_secret = ENV["LUNCH_TWEETS_ACCESS_SECRET"]
     end
     @lat = 37.788245
     @long = -122.417408

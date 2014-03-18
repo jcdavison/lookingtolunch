@@ -11,7 +11,8 @@ services.factory 'LunchMates', ($rootScope, $q, $http) ->
       
       selectLunchMate: (lunchMate) ->
         data = 
-          from: lunchMate.id
+          to: lunchMate.id
+          toHandle: lunchMate.handle
         $http
           method: "post"
           data: data 
