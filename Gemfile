@@ -44,8 +44,6 @@ group :development, :test do
   gem 'pry'
   gem 'pry-debugger'
   gem 'quiet_assets'
-  gem 'parallel_tests'
-  gem 'zeus-parallel_tests'
   gem 'guard-rspec'
   gem 'rb-fsevent'
 end
@@ -55,13 +53,14 @@ group :development do
   gem 'rack-livereload'
   gem 'better_errors'
   gem 'terminal-notifier-guard'
+  gem 'spring', '~> 1.1.2'
+  gem "spring-commands-rspec", group: :development
 end
 
 group :test do
   gem 'launchy', '>= 2.1.2'
   gem 'capybara', '>= 1.1.3'
   gem 'database_cleaner', '~> 1.2.0'
-  gem 'zeus', :require => false
   gem 'shoulda-matchers'
   gem 'pdf-inspector'
   gem 'selenium-webdriver'
