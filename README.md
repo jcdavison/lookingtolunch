@@ -33,8 +33,7 @@ http://sebastien.saunier.me/blog/2014/02/04/angular--rails-with-no-fuss.html
 
 #### TODO
 
-- configure spring
-- create a service that builds a chat room for each user that invited lunchers enter
+- create a service that builds a chat room for each user that invited lunchers enter, structure the firebase data correctly
 
 
 SPECS

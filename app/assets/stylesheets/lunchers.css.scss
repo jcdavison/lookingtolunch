@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+.outlined {
+  border: 1px solid $grey;
+}
+
+#chatroom {
+  height: 320px;
+  overflow-y: scroll;
+}
+
 .luncherpic {
   padding: 2px;
   height: 200px;

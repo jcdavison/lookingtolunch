@@ -9,6 +9,8 @@ gem 'redis-namespace'
 gem 'thin', '~> 1.6.1'
 gem 'rabl'
 gem 'underscore-rails'
+gem 'firebase'
+gem 'rest_client'
 
 #assets
 gem 'sass-rails', '~> 4.0.0'

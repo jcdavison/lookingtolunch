@@ -10,4 +10,6 @@ class Api::V1::LunchRequestController < ApplicationController
       render json: {info: "no soup for you"}, status: 400
     end
   end
+
+
 end

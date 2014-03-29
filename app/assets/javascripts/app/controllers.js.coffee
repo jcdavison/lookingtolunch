@@ -1,26 +1,33 @@
-# scopes are the glue between the view and data
-# and are where the unique, dirty, two way bindings get controlled
-# they are the source of truth for the application state
-# scopes are hierarchical and nestable
-# it is bad practice to allow dom interaction or data manipuluation in a controller
-
 controllers = angular.module('Lunch.controllers', [] )
 
-controllers.controller('LunchPoolController', ($scope, LunchMates) ->
-    n = 0
+controllers.controller('LunchPoolController', ($scope, LunchMates, Chat, User, $firebase) ->
+  n = 0
+  chat_url = null
 
-    LunchMates.getLunchMates().then (data) ->
-      $scope.lunchers = data 
-      setLunchMate()
+  LunchMates.getLunchMates().then (data) ->
+    $scope.lunchers = data 
+    setLunchMate()
 
-    $scope.selectLunchMate = (lunchMate) ->
-      LunchMates.selectLunchMate(lunchMate)
-      incrementLunchMate()
-      setLunchMate()
+  User.current().then (data) =>
+    $scope.currentUser = data.user
+    Chat.setRoom($scope.currentUser.twitter)
+    chat_url = "http://lookingtolunch.firebaseio.com/#{$scope.currentUser.twitter}"
+    chatroom = new Firebase(chat_url)
+    $scope.messages = $firebase(chatroom)
 
-    incrementLunchMate = () ->
-      n += 1 unless n is $scope.lunchers.count - 1
+  $scope.selectLunchMate = (lunchMate) ->
+    LunchMates.selectLunchMate(lunchMate)
+    incrementLunchMate()
+    setLunchMate()
 
-    setLunchMate = () ->
-      $scope.perspectiveLunchMate = $scope.lunchers[n]
+
+  $scope.sendMessage = (newMessage) ->
+    chatroom = new Firebase(chat_url)
+    chatroom.push({from: $scope.currentUser.twitter, message: newMessage})
+
+  incrementLunchMate = () ->
+    n += 1 unless n is $scope.lunchers.count - 1
+
+  setLunchMate = () ->
+    $scope.perspectiveLunchMate = $scope.lunchers[n]
   )
