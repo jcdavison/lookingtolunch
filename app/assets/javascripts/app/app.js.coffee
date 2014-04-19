@@ -3,5 +3,6 @@ app = angular.module('Lunch', ['ngRoute','Lunch.controllers', 'Lunch.services', 
 
 app.config([ '$routeProvider', ($routeProvider) ->
   $routeProvider.when("/", { templateUrl: "/ngviews/lunch.html", controller: "LunchPoolController" } )
+  $routeProvider.when("/chat/:user", { templateUrl: "/ngviews/chat.html", controller: "LunchChatController" } )
 ])
 

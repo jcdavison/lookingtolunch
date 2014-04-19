@@ -40,10 +40,12 @@ SPECS
 
 FEATURE
 
+  - create a url that can be tweeted that shows requesting user's twitter and chat room, enforces twitter auth from visiting twitter person
   - once information hits the server, how to process it and remove the luncher from the users lunchmate pool, i don't really think redis is needed here, i don't want to pump volume, i want people to pick up to three people a day to say hay to. 
   - i should be generating the pool when a user logs in or serves a get request
   - what is really more important is having a pool of users's who tweets has already been classified
   - cycle to next lunch mate in lunchmates array
+
 
 
 

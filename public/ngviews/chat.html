@@ -1,36 +1,30 @@
-<div ng-controller="LunchPoolController">
+<div ng-controller="LunchChatController">
   <div class="row">
-    <div class="large-6 columns outlined">
+    <div class="large-6 columns">
       <div class="row">
         <div class="large-8 columns large-centered centered">
           <h4 class="subheader">
-            Invite Lunchmates
+            Chat with <span id="lunchhost">{{ lunchHost.name }}</span>
           </h4>
         </div>
       </div>
       <div class="row">
         <div class="large-6 columns large-centered centered">
-          <img ng-src="{{perspectiveLunchMate.pic}}" class="luncherpic">
+          <img ng-src="{{lunchHost.pic}}" class="luncherpic">
         </div>
       </div>
       <div class="row">
         <div class="large-6 columns large-centered centered">
-          <span class="handle subheader">{{perspectiveLunchMate.handle}}</span>
+          <span class="handle subheader">{{lunchHost.handle}}</span>
         </div>
       </div>
       <div class="row">
         <div class="large-6 columns large-centered centered">
-          <span class="handle subheader">{{perspectiveLunchMate.info}}</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="large-6 small-12 large-centered small-centered columns centered">
-          <a ng-click="selectLunchMate(perspectiveLunchMate)" class="letslunch bold" id="nope">Lunch!</a>
-          <a ng-click="nope" class="nothanks bold" id="yep">Nope.</a>
+          <span class="handle subheader">{{lunchHost.info}}</span>
         </div>
       </div>
     </div>
-    <div class="large-6 columns outlined">
+    <div class="large-6 columns">
       <h4 class="subheader centered">
         Chat With Friends
       </h4>

@@ -6,6 +6,12 @@ services.factory 'LunchMates', ($q, $http) ->
       $http.get('/lunchers').then (response, status) ->
         d.resolve(response.data)
       return d.promise
+
+    getLunchMate: (twitterhandle) ->
+      d = $q.defer();
+      $http.get("/api/show_lunch_host/#{twitterhandle}").then (response, status) -> 
+        d.resolve(response.data)
+      return d.promise
     
     selectLunchMate: (lunchMate) ->
       data = 
@@ -32,10 +38,8 @@ services.factory 'Chat', ($firebase) ->
 services.factory 'User', ($q, $http) ->
   User =
     current: () ->
-      console.log "trigger"
       d = $q.defer(); 
       $http.get('/api/current_user').then (response, status) ->
         d.resolve(response.data)
       return d.promise
   return User
-

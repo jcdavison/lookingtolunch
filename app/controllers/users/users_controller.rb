@@ -1,11 +1,18 @@
 class Users::UsersController < Devise::SessionsController
   respond_to :json
+  before_filter :reject_if_not_authorized_request!
 
   def is_user
-    reject_if_not_authorized_request!
     render status: 200,
       json: {
-      success: !User.find_by_name(params[:name]).blank?
+        success: !User.find_by_name(params[:name]).blank?
+      }
+  end
+
+  def show_lunch_host
+    render status: 200,
+      json: {
+        success: LunchMate.find_by_handle(params[:twitter]).show_lunch_info
       }
   end
 

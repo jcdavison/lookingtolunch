@@ -30,4 +30,26 @@ controllers.controller('LunchPoolController', ($scope, LunchMates, Chat, User, $
 
   setLunchMate = () ->
     $scope.perspectiveLunchMate = $scope.lunchers[n]
-  )
+)
+
+controllers.controller('LunchChatController', ($scope, LunchMates, Chat, User, $firebase, $routeParams) ->
+
+  chat_url = null
+  lunchHost = $routeParams.user
+
+  if lunchHost
+    LunchMates.getLunchMate(lunchHost).then (data) ->
+      $scope.lunchHost = data.success
+
+    
+    User.current().then (data) =>
+      $scope.currentUser = data.user
+      Chat.setRoom(lunchHost)
+      chat_url = "http://lookingtolunch.firebaseio.com/#{lunchHost}"
+      chatroom = new Firebase(chat_url)
+      $scope.messages = $firebase(chatroom)
+
+    $scope.sendMessage = (newMessage) ->
+      chatroom = new Firebase(chat_url)
+      chatroom.push({from: $scope.currentUser.twitter, message: newMessage})
+)
