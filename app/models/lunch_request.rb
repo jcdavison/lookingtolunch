@@ -4,7 +4,7 @@ class LunchRequest < ActiveRecord::Base
 
   def send_notification
     event = TwitterEvent.new
-    message = "Hi #{self.to_handle}, #{self.from_handle} is looking to lunch, click here for more info."
+    message = "Hi #{self.to_handle}, #{self.from_handle} is #lookingtolunch, click here for more info."
     if Rails.env.production?
       event.tweet message
     else
