@@ -1,4 +1,24 @@
 class LunchMate < ActiveRecord::Base
+  include AASM
+
+  aasm do
+    state :available, :intitial => true
+    state :presented
+    state :invited
+
+    event :present do
+      transitions :from => :available, :to => :presented
+    end
+
+    event :invite do
+      transitions :from => :presented, :to => :invited
+    end
+
+    event :provide do
+      transitions :from => [:presented, :invited], :to => :available
+    end
+  end
+
   validates_presence_of :name, :info, :last_tweet, :handle, :pic
   validates_uniqueness_of :handle
 

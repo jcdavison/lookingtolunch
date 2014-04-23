@@ -18,7 +18,6 @@
 
 
 ```
-  redis-server
   bundle exec zeus start
   bundle exec guard
   bundle exec zeus server
@@ -48,11 +47,6 @@ FEATURE
 
 
 
-
-BACKEND
-  - when a user signs up, run a server call to firebase that creates a new room for said user
-  - ensure that if the redis instance returns nil, the app doesn't crash
-  - is redis-mock actually working and not effecting production ? 
 
 FRONT END
   - create a scope method that cycles through and selects yes or now for lunchers

@@ -4,7 +4,7 @@ class LunchersController < ApplicationController
   layout :choose_layout
 
   def index
-    @lunch_pool = current_user.lunch_pool
+    @lunch_pool = LunchMate.last(5)
     render json: @lunch_pool, status: 200
   end
 

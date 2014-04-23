@@ -1,5 +1,4 @@
 require 'spec_helper'
-#make sure redis is running locally
 
 describe LunchersController do
   before do
