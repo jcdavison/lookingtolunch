@@ -10,6 +10,7 @@ gem 'underscore-rails'
 gem 'firebase'
 gem 'rest_client'
 gem 'aasm'
+gem 'sidekiq'
 
 #assets
 gem 'sass-rails', '~> 4.0.0'
