@@ -1,4 +1,7 @@
 Lookingtolunch::Application.routes.draw do
+  # require 'sidekiq/web'
+  # mount Sidekiq::Web => '/sidekiq'
+
   namespace :api do
     namespace :v1 do
       post 'lunch_request', to: "lunch_request#create"

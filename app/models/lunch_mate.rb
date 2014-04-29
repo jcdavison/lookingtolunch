@@ -1,21 +1,26 @@
 class LunchMate < ActiveRecord::Base
   include AASM
 
-  aasm do
+  aasm :whiny_transitions => false do
     state :available, :intitial => true
     state :presented
     state :invited
 
     event :present do
-      transitions :from => :available, :to => :presented
+      transitions :from => :available, :to => :presented, :on_transition => 
+        Proc.new {|obj| LunchMate.available! obj.id } 
     end
 
     event :invite do
       transitions :from => :presented, :to => :invited
     end
 
-    event :provide do
-      transitions :from => [:presented, :invited], :to => :available
+    event :provide_from_avail do
+      transitions :from => :presented, :to => :available, :guard => :presented?
+    end
+
+    event :provide_from_invited do
+      transitions :from => :invited, :to => :available, :guard => :invited?
     end
   end
 
@@ -34,6 +39,11 @@ class LunchMate < ActiveRecord::Base
 
   def show_lunch_info
     {name: name, handle: handle, pic: pic, info: info, last_tweet: last_tweet}
+  end
+
+  def LunchMate.available! id, delay = nil
+    delay ||= 10.seconds
+    ProvideFromAvail.perform_in delay, id
   end
 
 end

@@ -11,6 +11,7 @@ gem 'firebase'
 gem 'rest_client'
 gem 'aasm'
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
 
 #assets
 gem 'sass-rails', '~> 4.0.0'

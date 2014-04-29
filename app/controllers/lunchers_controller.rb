@@ -4,7 +4,8 @@ class LunchersController < ApplicationController
   layout :choose_layout
 
   def index
-    @lunch_pool = LunchMate.last(5)
+    @lunch_pool = LunchMate.where(aasm_state: "available").last(5)
+    @lunch_pool.each {|mate| PresentWorker.perform_async(mate.id)}
     render json: @lunch_pool, status: 200
   end
 

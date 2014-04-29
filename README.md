@@ -45,7 +45,9 @@ FEATURE
   - what is really more important is having a pool of users's who tweets has already been classified
   - cycle to next lunch mate in lunchmates array
 
+STACK
 
+  - sidekiq needs a daemon supervisor ? https://github.com/mperham/sidekiq/wiki/Deployment
 
 
 FRONT END
