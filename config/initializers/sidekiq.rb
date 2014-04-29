@@ -18,7 +18,7 @@ Sidekiq.configure_server do |config|
     config.redis = {url: ENV['REDISTOGO_URL']}
   end
 
-
+  Rails.logger.info "connecting to redis server at #{config.redis}"
   Rails.application.config.after_initialize do
     ActiveRecord::Base.connection_pool.disconnect!
 
@@ -36,6 +36,7 @@ Sidekiq.configure_client do |config|
     config.redis = {url: ENV['REDISTOGO_URL']}
   end
 
+  Rails.logger.info "connecting to redis client at #{config.redis}"
   Rails.application.config.after_initialize do
     ActiveRecord::Base.connection_pool.disconnect!
 
