@@ -62,3 +62,8 @@ TECHNICAL DEBT
 NOTES
 
   - it is probably a bad ideas for any given twitter user to repeat requests to lunch from different users
+
+```
+  heroku ps:scale worker+1
+  # seems useful
+```
