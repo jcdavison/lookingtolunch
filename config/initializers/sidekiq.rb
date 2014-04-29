@@ -1,5 +1,9 @@
 Sidekiq.configure_server do |config|
-  config.redis = { url: 'redis://localhost:6379/0' }
+  if rails.env == 'production'
+    config.redis = { url: ENV['REDIS_PROVIDER'] }
+  else
+    config.redis = { url: 'redis://localhost:6379/0' }
+  end
 
   database_url = ENV['DATABASE_URL']
   if database_url
