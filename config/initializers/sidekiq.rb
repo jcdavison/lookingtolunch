@@ -34,9 +34,11 @@ end
 Sidekiq.configure_client do |config|
   if ENV.has_key?('REDISTOGO_URL')
     config.redis = {url: ENV['REDISTOGO_URL']}
+    Rails.logger.info "connecting to redis client at #{config.redis}"
+  else
+    Rails.logger.info "using local redis"
   end
 
-  Rails.logger.info "connecting to redis client at #{config.redis}"
   Rails.application.config.after_initialize do
     ActiveRecord::Base.connection_pool.disconnect!
 
