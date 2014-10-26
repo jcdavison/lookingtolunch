@@ -1,5 +1,4 @@
-### http://lookingtolunch.herokuapp.com/
-
+This application is no longer in development.  I'm too busy with codeunion.io :smile:
 ### Config Steps
 
 ```
