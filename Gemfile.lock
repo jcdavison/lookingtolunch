@@ -65,16 +65,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    columnize (0.3.6)
     connection_pool (1.2.0)
     daemons (1.1.9)
     database_cleaner (1.2.0)
-    debugger (1.6.5)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.3.1)
-    debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.3.1)
     descendants_tracker (0.0.3)
     devise (3.0.0)
       bcrypt-ruby (~> 3.0)
@@ -194,9 +187,6 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    pry-debugger (0.2.2)
-      debugger (~> 1.3)
-      pry (~> 0.9.10)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rabl (0.9.3)
@@ -357,7 +347,6 @@ DEPENDENCIES
   pdf-inspector
   pg (~> 0.17.1)
   pry
-  pry-debugger
   quiet_assets
   rabl
   rack-livereload

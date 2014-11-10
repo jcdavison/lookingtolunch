@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.1.2'
 
 gem 'rails', '4.0.1'
 gem 'haml-rails'
@@ -45,7 +45,6 @@ group :development, :test do
   gem 'factory_girl_rails', '4.2.1'
   gem 'mocha', '~> 1.0.0'
   gem 'pry'
-  gem 'pry-debugger'
   gem 'quiet_assets'
   gem 'guard-rspec'
   gem 'rb-fsevent'
